@@ -12,19 +12,27 @@
 Product p = (Product)request.getAttribute("product");
 %>
 
-<P><%= p.getId()%></P>
-<P><%= p.getName() %></P>
-<P><%= p.getAmount() %></P>
-<P><%= p.getPrice()%></P>
+<h1>the item u r putting to the cart is</h1>
+<table>
+<tr>
+<td><img src=" <%= p.getPic() %>"></td>
+<td>
+<table>
+<tr><P>id: <%= p.getId()%></P></tr>
+<tr><P>name: <%= p.getName() %></P></tr>
+<tr><P>stock: <%= p.getAmount() %></P></tr>
+<tr><P>price: <%= p.getPrice()%></P></tr>
+</table>
+</td>
+</tr>
+</table>
 
-
-<td> 
-<form action="Control" enctype="UTF-8" method="get">
+<form action="Controller" enctype="UTF-8" method="get">
 <p><input type="submit" value="add to cart" ></p>
 <p><input type="hidden" name="action" value="add"></p>
 <p><input type="hidden" name="id" value="<%= p.getId() %>"></p>
 </form> 
-</td>
+
 
 </body>
 </html>

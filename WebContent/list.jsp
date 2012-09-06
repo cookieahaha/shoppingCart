@@ -13,8 +13,10 @@
 <table border="1" cellpadding="5" cellspacing="0">
 <tr>
 
+<td></td>
+
 <td>
-<form action="Control" enctype="UTF-8" method="get">
+<form action="Controller" enctype="UTF-8" method="get">
 <input type="submit" value="id" >
 <input type="hidden" name="action" value="sort" >
 <input type="hidden" name="sortType" value="id" >
@@ -22,7 +24,7 @@
 </td>
 
 <td>
-<form action="Control" enctype="UTF-8" method="get">
+<form action="Controller" enctype="UTF-8" method="get">
 <input type="submit" value="name" >
 <input type="hidden" name="action" value="sort" >
 <input type="hidden" name="sortType" value="name" >
@@ -30,7 +32,7 @@
 </td>
 
 <td>
-<form action="Control" enctype="UTF-8" method="get">
+<form action="Controller" enctype="UTF-8" method="get">
 <input type="submit" value="price" >
 <input type="hidden" name="action" value="sort" >
 <input type="hidden" name="sortType" value="price" >
@@ -38,7 +40,7 @@
 </td>
 
 <td>
-<form action="Control" enctype="UTF-8" method="get">
+<form action="Controller" enctype="UTF-8" method="get">
 <input type="submit" value="amount" >
 <input type="hidden" name="action" value="sort" >
 <input type="hidden" name="sortType" value="amount" >
@@ -50,13 +52,14 @@
 <%
 for(Product p: ProductManager.getManager().getAll()){ %>
 <tr>
+<td><img src=" <%= p.getPic() %>"></td>
 <td><%=  p.getId() %></td>
 <td><%=  p.getName() %></td>
 <td><%=  p.getPrice()%></td>
 <td><%=  p.getAmount()%></td>
 
 <td> 
-<form action="Control" enctype="UTF-8" method="get">
+<form action="Controller" enctype="UTF-8" method="get">
 <p><input type="submit" value="detail" ></p>
 <p><input type="hidden" name="action" value="detail"></p>
 <p><input type="hidden" name="id" value="<%= p.getId() %>"></p>

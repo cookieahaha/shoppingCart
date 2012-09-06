@@ -13,12 +13,14 @@ public class Product implements java.io.Serializable{
   private String name;
   private int price;
   private int amount;
+  private String pic;
 
-  public Product(String id, String name, int price, int amount){
+  public Product(String id, String name, int price, int amount, String pic){
     this.id = id;
     this.name = name;
     this.price = price;
     this.amount = amount;
+    this.pic = pic;
   }
 
   public void setId(String id){
@@ -36,6 +38,10 @@ public class Product implements java.io.Serializable{
   public void setAmount(int amount){
     this.amount = amount;
   }
+
+  public void setPic(String pic){
+    this.pic = pic;
+  }
   
   public String getId(){
     return id;
@@ -51,6 +57,10 @@ public class Product implements java.io.Serializable{
   
   public int getAmount(){
     return amount;
+  }
+
+  public String getPic(){
+    return pic;
   }
   
   public void writeToFile(){

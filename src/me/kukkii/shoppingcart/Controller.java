@@ -31,13 +31,23 @@ public class Controller extends HttpServlet {
     }
     else if(action.equals("detail")){
       String id = request.getParameter("id");
-      Product p = ProductManager.getManager().lookUp("id");
+      Product p = ProductManager.getManager().lookUp(id);
       
       request.setAttribute("product", p);
       ServletContext sc = getServletContext();
       RequestDispatcher rd = sc.getRequestDispatcher("/detail.jsp");
       rd.forward(request,response);
     }
+    else if(action.equals("add")){
+      String id = request.getParameter("id");
+      Product p = ProductManager.getManager().lookUp(id);
+      
+      request.setAttribute("product", p);
+      ServletContext sc = getServletContext();
+      RequestDispatcher rd = sc.getRequestDispatcher("/AddServlet.jsp");
+      rd.forward(request,response);
+    }
+    
   }
   
 }
