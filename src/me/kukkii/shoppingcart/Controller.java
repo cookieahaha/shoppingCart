@@ -44,7 +44,7 @@ public class Controller extends HttpServlet {
       
       request.setAttribute("product", p);
       ServletContext sc = getServletContext();
-      RequestDispatcher rd = sc.getRequestDispatcher("/AddServlet.jsp");
+      RequestDispatcher rd = sc.getRequestDispatcher("/AddServlet");
       rd.forward(request,response);
     }
     

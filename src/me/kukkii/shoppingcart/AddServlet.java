@@ -28,7 +28,7 @@ public class AddServlet extends HttpServlet {
     
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	  HttpSession session = new HttpSession();
+	  HttpSession session = request.getSession();
 	  
 	  Cart cart = (Cart)session.getValue("cart");
 	  if(cart == null){
